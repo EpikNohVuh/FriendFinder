@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,246 +13,301 @@
 </head>
 
 <body>
+    <style>
+        body {
+            font-family: arial;
+            background-color: #eeeeee;
+        }
 
-    <div class="container">
+        h1 {
+            font-family: 'Yellowtail', cursive;
+            font-size: 80px;
+            text-shadow: 0 0 3px grey;
 
-        <h2>Survey Questions</h2>
-        <hr>
+        }
 
-        <h3><strong>About You</strong></h3>
-        <h4>Name (Required)</h4>
-        <input type="text" id="name" required>
+        .btn {
+            background-color: blue;
+            padding: 4px 20px 8px 20px;
+            box-shadow: 0 8px 16px 0 rgba(46, 43, 43, 0.2), 0 6px 20px 0 rgba(126, 112, 112, 0.19);
+        }
 
-        <h4>Link to Photo Image (Required)</h4>
-        <input type="text" id="photo" required>
+        li {
+            line-height: 30px;
+        }
 
-        <hr>
-        <form method="post" role="form">
-            <h3><strong>Question 1</strong></h3>
-            <h4>The best kind of love grows out of a long friendship.</h4>
-            <select id="q1">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
+        label {
+            margin: 7px 0 7px 3px;
+            font-weight: bold;
+        }
 
-            <h3><strong>Question 2</strong></h3>
-            <h4>Tomatoes are a fruit.</h4>
-            <select id="q2">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
+        .modal-title {
+            text-shadow: 0 0 3px grey;
+        }
+        .quesContainer {
+            margin: 12px 0 12px 0;
+            background-color: white;
+            padding:4px;
+            border-radius: 3px;
+        }
+    </style>
 
+    <body>
+        <div class="container">
+            <div class="jumbotron">
 
-            <h3><strong>Question 3</strong></h3>
-            <h4>My dog is probably smarter than you.</h4>
-            <select id="q3">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-
-            <h3><strong>Question 4</strong></h3>
-            <h4>Yes, my dog can be better looking that you.</h4>
-            <select id="q4">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-
-            <h3><strong>Question 5</strong></h3>
-            <h4>People can rarely upset you.</h4>
-            <select id="q5">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-
-            <h3><strong>Question 6</strong></h3>
-            <h4>Coffee is an essential part of anyone's morning.</h4>
-            <select id="q6">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-
-            <h3><strong>Question 7</strong></h3>
-            <h4>When brushing your teeth, it's always important to wet your toothbrush first.</h4>
-            <select id="q7">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-            <h3><strong>Question 8</strong></h3>
-            <h4>It's important to always put your right foot forward first.</h4>
-            <select id="q8">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-            <h3><strong>Question 9</strong></h3>
-            <h4>It's important to have equal amounts of peanut butter and jelly in a sandwich.</h4>
-            <select id="q9">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-            <h3><strong>Question 10</strong></h3>
-            <h4>You have confidence that this survey, will really reveal your new BFF!</h4>
-            <select id="q10">
-                <option value=""></option>
-                <option value="1">1 (Strongly Disagree)</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5 (Strongly Agree)</option>
-            </select>
-
-            <br>
-            <br>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary btn-lg" id="submit">
-                Submit</button>
-
-            <hr>
-        </form>
-        <footer class="footer">
-            <div class="container">
-                <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/EpikNohVuh">GitHub Repo</a>
-                </p>
-            </div>
-        </footer>
-
-    </div>
-
-    <!-- Modal -->
-    <div id="results-modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
-                </div>
-                <div class="modal-body">
-                    <h2 id="match-name"></h2>
-                    <img id="match-img"
-                        src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>
+                        <br>
+                        <p style="line-height:16px;text-align:center;">
+                            <span
+                                style="font-family:Yellowtail;font-size:100px;color:blue;font-weight:bold;text-shadow: 0 0 3px grey;">F
+                                <br>
+                                <span
+                                    style="font-family:Yellowtail;font-size:100px;color:rgb(43, 43, 165);font-weight:bold;text-shadow: 0 0 3px grey;">&nbspF
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="col-md-8">
+                        <h1>Friend Finder</h1>
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <script type="text/javascript">
+        <div class="container" id="surveyBody">
 
-        //initial form question settings
-        $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
+            <div class="row">
 
-        $("#submit").on("click", function (event) {
-            var name = $("#name").val().trim()
-            var photo = $("#photo").val().trim()
-            var q1 = $("#q1").val()
-            var q2 = $("#q2").val()
-            var q3 = $("#q3").val()
-            var q4 = $("#q4").val()
-            var q5 = $("#q5").val()
-            var q6 = $("#q6").val()
-            var q7 = $("#q7").val()
-            var q8 = $("#q8").val()
-            var q9 = $("#q9").val()
-            var q10 = $("#q10").val()
+                <div class="col-lg-12">
 
-            console.log(q10)
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <strong>Answer the following questions honestly to discover a new best friend!</strong>
+                                <p>
+                                    <i>(5-strongly agree, 1-strongly disagree)</i>
+                                </p>
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form method="POST">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <label>What is your name?</label>
+                                        <input type="text" class="form-control" placeholder="Name" id="name" required>
+                                    </div>
 
-            event.preventDefault();
+                                    <div class="col">
+                                        <label>Link to a profile image!</label>
+                                        <input type="text" class="form-control" placeholder="http://" id="image"
+                                            required>
+                                    </div>
+                                </div>
+                                <br />
 
-            var newFriend = {
-                name: name,
-                photo: photo,
-                scores: [q1, q2, q3, q4, q4, q5, q6, q7, q8, q9, q10]
+                                <div class="quesContainer">
+                                    <label>1) The best kind of love grows out of a long friendship.</label>
+                                    <select class="form-control" id="q1">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
 
-            };
-            console.log(newFriend);
+                                <div class="quesContainer">
+                                    <label>2) Tomatoes are a fruit.</label>
+                                    <select class="form-control" id="q2">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
 
-            $.post("/api/friends", newFriend,
-                function (data) {
+                                <div class="quesContainer">
+                                    <label>3) Some dogs are smarter than humans.</label>
+                                    <select class="form-control" id="q3">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
 
-                    if (data) {
-                        // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-                        $("#match-name").text(data.name);
-                        $('#match-img').attr("src", data.photo).width('450px');
+                                <div class="quesContainer">
+                                    <label>4) It's important to have equal amounts of peanut butter and jelly in a
+                                        sandwich.</label>
+                                    <select class="form-control" id="q4">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
 
-                        // Show the modal with the best match 
-                        $("#results-modal").modal('toggle');
-                    }
+                                <div class="quesContainer">
+                                    <label>5) People can rarely upset you.</label>
+                                    <select class="form-control" id="q5">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
 
-                    // Clear the form when submitting
-                    $("#q1").val(3),
-                        $("#q2").val(),
-                        $("#q3").val(),
-                        $("#q4").val(),
-                        $("#q5").val(),
-                        $("#q6").val(),
-                        $("#q7").val(),
-                        $("#q8").val(),
-                        $("#q9").val(),
-                        $("#q10").val()
+                                <div class="quesContainer">
+                                    <label>6) Coffee is an essential part of anyone's morning.</label>
+                                    <select class="form-control" id="q6">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+
+                                <div class="quesContainer">
+                                    <label>7) When brushing your teeth, it's always important to wet your toothbrush
+                                        first.</label>
+                                    <select class="form-control" id="q7">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+
+                                <div class="quesContainer">
+                                    <label>8) When starting to walk, it's always important to step with your right
+                                        foot first.</label>
+                                    <select class="form-control" id="q8">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+
+                                <div class="quesContainer">
+                                    <label>9) These questions are weird. </label>
+                                    <select class="form-control" id="q9">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+
+                                <div class="quesContainer">
+                                    <label>10) You have confidence that this survey, will really reveal your new
+                                        BFF!</label>
+                                    <select class="form-control" id="q10">
+                                        <option value="1">1 (Strongly disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+
+                            </form>
+                            <br>
+                            <div class="text-left">
+                                <button type="submit" class="btn btn-primary btn-md" data-toggle="modal"
+                                    data-target="#myModal" id="add-btn">
+                                    <span class="fa fa-fire"></span> Discover a new Friend</button>
+                            </div>
+                            <a href="/">Home</a> |
+                            <a href="/api/friends" target="_blank">Friends API</a> |
+                            <a href="https://github.com/epiknohvuh/friendFinder" target="_blank">Github Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Meet your new BFF</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2 class="text-center" id="friendName"></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <img src="#" alt="friend image" style="max-width:50%" id="friendImage">
+                                </div>
+                            </div>
+                            <h3 id="percentMatch"></h3>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <script src="../app.js" async></script> -->
+        <script>
+            $(document).ready(function () {
+                $(document).on("click", "#add-btn", function (event) {
+                    event.preventDefault();
+                    let you = {
+                        name: $("#name").val().trim(),
+                        image: $("#image").val().trim(),
+                        scores: [$("#q1").val().trim(),
+                        $("#q2").val().trim(),
+                        $("#q3").val().trim(),
+                        $("#q4").val().trim(),
+                        $("#q5").val().trim(),
+                        $("#q6").val().trim(),
+                        $("#q7").val().trim(),
+                        $("#q8").val().trim(),
+                        $("#q9").val().trim(),
+                        $("#q10").val().trim()]
+                    };
+                    $.post("/api/friends", you, function (data) {
+                        // change modal src to new bff name, image
+                        $("#friendName").text(data.name);
+                        $("#friendImage").attr("src", data.image);
+                        // clear form after submission
+                        $("#name").val("");
+                        $("#image").val("")
+                        $("#q1").val(1);
+                        $("#q2").val(1);
+                        $("#q3").val(1);
+                        $("#q4").val(1);
+                        $("#q5").val(1);
+                        $("#q6").val(1);
+                        $("#q7").val(1);
+                        $("#q8").val(1);
+                        $("#q9").val(1);
+                        $("#q10").val(1);
+                    });
                 });
-
-        });
-
-    </script>
-
-</body>
+            });
+        </script>
+    </body>
 
 </html>

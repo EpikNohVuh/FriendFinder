@@ -1,35 +1,37 @@
+const express = require('express')
+const app = express()
+var friends = require("../data/friends");
+// Routes
+// =============================================================
 module.exports = function (app) {
-
-    var friendsData = require("../data/friends.js");
-
-
-
     app.get("/api/friends", function (req, res) {
-        res.json(friendsData);
+        res.json(friends);
     });
 
-
+    // Create New Characters - takes in JSON input
     app.post("/api/friends", function (req, res) {
-        var newFriend = req.body;
-        var match;
-        var lowestDiff = 100;
-
-        for (let i in friendsData) {
-
-            var diff = 0;
-
-            for (let k in friendsData[i].score) {
-                diff += Math.abs(friend.scores[k] - friendsArray[i].scores[k]);
+        var newFriendScores = req.body.scores;
+        for(var i=0; i<newFriendScores.length; i++) {
+            newFriendScores[i] = parseInt(newFriendScores[i]);
+        };
+        var scoresMatched = [];
+        closestMatch = 0;
+        //Compare the two friends scores (arrays)
+        for (let i = 0; i < friends.length; i++) {
+            var scoreDifference = 0;
+            for (let x = 0; x < newFriendScores.length; x++) {
+                scoreDifference += (Math.abs(friends[i].scores[x]) - (newFriendScores[x]));
             }
-
-            if (diff < lowestDiff) {
-                lowestDiff = diff;
-                match = friendsData[i];
-            }
-
+            scoresMatched.push(Math.abs(scoreDifference));
         }
-        friendsData.push(newFriend);
-        res.json(match);
+        //find the two closest match
+        for (let i = 0; i < scoresMatched.length; i++) {
+            if (scoresMatched[i] <= scoresMatched[closestMatch]) {
+                closestMatch = i;
+            }
+        }
+        var bestFriend = friends[closestMatch];
+        friends.push(req.body);
+        res.json(bestFriend);
     });
-
 };
