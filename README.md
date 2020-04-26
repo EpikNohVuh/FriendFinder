@@ -12,6 +12,7 @@ __NOTE: You can either run it locally on your machine with the installation inst
 6) Enjoy the app!
 
 ## Live Application
+https://secret-plains-35512.herokuapp.com/
 
 ## Built with
 * Javascript & jQuery
